@@ -2,16 +2,24 @@
 
 body, html {
     background-color: #FEFCFB;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
 
     font-family: 'Oswald', sans-serif;
+
+    display: flex;
+    flex-direction: column;
 }
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+a {
+    color: #1282A2;
+    text-decoration: none;
 }
 
 header {
@@ -82,11 +90,12 @@ nav li {
 }
 
 .content {
-    margin-top: 100px;
+    margin-top: 150px;
 
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .horizontal {
@@ -115,7 +124,7 @@ nav li {
 
 #profImg {
     flex-grow: 1;
-    margin-top: 10%;
+    margin-top: 20%;
 
     width: 350px;
     min-height: 350px;
@@ -140,11 +149,11 @@ nav li {
     margin-bottom: 0;
 }
 
-.profileText ul li a {
+.profileText table tr td ul li a {
     align-self: flex-start;
 
     text-decoration: none;
-    font-size: 22px;
+    font-size: 28px;
     color: black;
 }
 
@@ -155,6 +164,7 @@ nav li {
 #about {
     flex-grow: 6;
     margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
 #about h1 {
@@ -166,15 +176,71 @@ nav li {
     margin: 0;
 }
 
+#about p {
+    font-size: 24px;
+    font-weight: 300;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#about p strong {
+    font-weight: 400;
+}
+
+#about table tr td ul {
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+#about table tr td ul li {
+    margin-top: 0;
+    font-weight: 300;
+}
+
+footer {
+    margin-top: auto;
+}
+
+footer hr {
+    width: 95%;
+}
+
 /* SPRITES */
 .emailIcon {
+    width: 52px;
+    height: 52px;
 
+    background-image: url("./sprites.jpg");
+    background-position: -14px -10px;
+    display: inline-block;
+
+    margin-right: 10px;
 }
 
 .websiteIcon {
+    width: 52px;
+    height: 52px;
 
+    background-image: url("./sprites.jpg");
+    background-position: -168px -82px;
+    display: inline-block;
+
+    margin-right: 10px;
 }
 
 .githubIcon {
+    background-image: url("./github_logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 
+    border-radius: 50%;
+
+    width: 52px;
+    height: 52px;
+
+    margin-right: 10px;
+
+    display: inline-block;
 }

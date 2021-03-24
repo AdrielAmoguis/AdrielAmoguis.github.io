@@ -361,3 +361,21 @@ footer hr {
     flex-grow: 0;
     margin-right: 1em;
 }
+
+#lyoLogo {
+    border-radius: 50px;
+    object-fit: cover;
+    max-width: 50%;
+    flex-basis: 100%;
+    flex-grow: 0;
+    margin-right: 1em;
+}
+
+#mscLogo {
+    border-radius: 50px;
+    object-fit: cover;
+    max-width: 40%;
+    flex-basis: 100%;
+    flex-grow: 0;
+    margin-right: 1em;
+}

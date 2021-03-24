@@ -49,6 +49,10 @@ header p {
     font-size: 18px;
 }
 
+.selected {
+    color: #FCB103;
+}
+
 .heading {
     display: flex;
     flex-direction: column;
@@ -90,11 +94,12 @@ nav li {
 }
 
 .content {
-    margin-top: 150px;
+    margin-top:7em;
 
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -147,14 +152,26 @@ nav li {
 
 .profileText h1 {
     margin-bottom: 0;
+    margin-top: 1em;
 }
 
-.profileText table tr td ul li a {
-    align-self: flex-start;
+.listOfLinks {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
-    text-decoration: none;
-    font-size: 28px;
-    color: black;
+.listOfLinks li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.listOfLinks a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profileText ul {
@@ -208,39 +225,46 @@ footer hr {
 
 /* SPRITES */
 .emailIcon {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
     background-image: url("./sprites.jpg");
-    background-position: -14px -10px;
+    background-position: -100px 0;
     display: inline-block;
+}
 
-    margin-right: 10px;
+.linkedInIcon {
+    width: 50px;
+    height: 50px;
+
+    background-image: url("./sprites.jpg");
+    background-position: -150px 0;
+    display: inline-block;
+}
+
+.twitterIcon {
+    width: 50px;
+    height: 50px;
+
+    background-image: url("./sprites.jpg");
+    background-position: 0 0;
+    display: inline-block;
 }
 
 .websiteIcon {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
     background-image: url("./sprites.jpg");
-    background-position: -168px -82px;
+    background-position: -105px 0px;
     display: inline-block;
-
-    margin-right: 10px;
 }
 
 .githubIcon {
-    background-image: url("./github_logo.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
+    width: 50px;
+    height: 50px;
 
-    border-radius: 50%;
-
-    width: 52px;
-    height: 52px;
-
-    margin-right: 10px;
-
+    background-image: url("./sprites.jpg");
+    background-position: -450px 0px;
     display: inline-block;
 }

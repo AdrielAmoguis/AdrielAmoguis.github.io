@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700&display=swap');
 
 body, html {
     background-color: #FEFCFB;
@@ -94,7 +95,7 @@ nav li {
 }
 
 .content {
-    margin-top:7em;
+    margin-top: 8em;
 
     height: 100%;
     display: flex;
@@ -108,7 +109,16 @@ nav li {
     flex-direction: row;
     justify-content: space-evenly;
 
-    margin-top: 20px;
+    align-self: stretch;
+
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #profile {
@@ -129,7 +139,7 @@ nav li {
 
 #profImg {
     flex-grow: 1;
-    margin-top: 20%;
+    margin-top: 40%;
 
     width: 350px;
     min-height: 350px;
@@ -153,6 +163,12 @@ nav li {
 .profileText h1 {
     margin-bottom: 0;
     margin-top: 1em;
+}
+
+.profileText p {
+    font-weight: 300;
+    margin: 0;
+    font-size: 18px;
 }
 
 .listOfLinks {
@@ -223,6 +239,35 @@ footer hr {
     width: 95%;
 }
 
+.project-container {
+    border: 2px solid #dbd7f0;
+    border-radius: 25px;
+    display: inline-block;
+
+    flex-basis: 100%;
+    flex-grow: 0;
+
+    margin: 0.5em;
+    padding: 1em;
+
+    font-family: Roboto;
+}
+
+.project-container h2 {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.project-container p {
+    text-align: justify;
+}
+
+.project-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 /* SPRITES */
 .emailIcon {
     width: 50px;
@@ -256,7 +301,7 @@ footer hr {
     height: 50px;
 
     background-image: url("./sprites.jpg");
-    background-position: -105px 0px;
+    background-position: -300px 0px;
     display: inline-block;
 }
 

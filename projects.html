@@ -20,17 +20,133 @@
                 <ul>
                     <li><a href="index.html">About</a></li>
                     <li><a class="selected" href="projects.html">Projects</a></li>
+                    <li><a href="education.html">Education</a></li>
                     <li><a href="organizations.html">Organizations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="content">
             <h1 style="font-size: 48px; margin-bottom: 0;">Projects</h1>
-            <p style="font-size: 18px; margin-top: 0;">My projects, both ongoing and finished, are listed below.</p>
+            <p style="font-size: 18px; margin-top: 0; margin-bottom: 0;">My projects, both ongoing and finished, are listed below.</p>
+            <p style="font-size: 14px; margin-top: 0;">Last Updated: March 24, 2021</p>
             <article class="horizontal">
-                
+                <section class="vertical project-container">
+                    <h2 align="center">Personal - CussNet</h2>
+                    <p>
+                        CussNet (tentative name) is one of my upcoming projects for 2021. It is a Neural Network that aims to identify text profanity in the context
+                        of both English and Filipino languages. There are already several libraries available for free for any development environment
+                        that can identify profanity in the English context. However, as the global pandemic forces us indoors, several communities have
+                        taken their social sphere online -- the Philippines is not exception to this.
+                    </p>
+                    <p>
+                        With the rapidly growing internet users from the Philippines, CussNet aims to help online communities automate their moderation
+                        workflow to keep online Filipino communities a safe-space and free from text profanity.
+                    </p>
+                    <p>
+                        Estimated month of completion: <em>Septermber - October 2021</em>
+                    </p>
+                    <h3>Links</h3>
+                    <a target="_blank" href="https://github.com/AdrielAmoguis/Cuss-Net"><div class="githubIcon"></div>GitHub Repository</a>
+                </section>
+
+                <section class="vertical project-container">
+                    <h2 align="center">Lasallian Youth Orchestra - Antonio</h2>
+                    <p>
+                        Antonio is the unofficial mascot of the Lasallian Youth Orchestra. He is the face (quite literally the profile photo) of our official
+                        Discord bot. This Discord bot is responsible for member interaction while the LYO Google Services Integration (headed by Lorenzo Querol)
+                        is still under development. This is where they see their account details, Discord voice hours, and many more organization-specific details.
+                    </p>
+                    <p>
+                        Being an organization under the Culture & Arts Office (CAO), one of the requirements for a trainee to become a full member of the orchestra
+                        is residency. In pre-pandemic times, residency simply meant staying in the rehearsal hall for a set amount of hours for two terms. The rehearsal
+                        hall has a computer with a small Java Swing application on it that tracks everyone's residency time by simply scanning a person's DLSU ID as they
+                        go in and go out of the hall.
+                    </p>
+                    <p>
+                        Now being in the online setting, we needed a similar system that would automatically track trainees' number of hours in our 'virtual rehearsal hall'
+                        which is a Discord server. Antonio was specifically made for this purpose. A fully automated bot to track voice activity (but no recording) to calculate
+                        residency hours. The other features of Antonio were just developed as side-features that could potentially aid the members' quality of interaction on the server.
+                    </p>
+                    <p>Antonio was built using the Discord.py Library for Python. It uses the LYO DataAPI to communicate with LYO's database. Deployed with Docker.</p>
+                    <h3>Links</h3>
+                    <a href="#"><div class="githubIcon"></div>GitHub Repository is Private to the LYO Development Team</a>
+                </section>
+            </article>
+            <article class="horizontal">
+                <section class="vertical project-container">
+                    <h2 align="center">Lasallian Youth Orchestra - Public Website</h2>
+                    <p>
+                        With the formation of the LYO Development Team mainly due to the convergence of five CS majors in the organization, one of LYO's goals for the academic year
+                        is the deployment of LYO's very own public website.
+                    </p>
+                    <p>
+                        The website will contain LYO's details, publicity materials, among others. It will also be an avenue where people may apply for membership as well.
+                        As of today (Mar 24, 2021), the development team planned for the following pages on the website:
+                    </p>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Performances (Past & Upcoming)</li>
+                        <li>Humans of LYO</li>
+                        <li>Be a Member</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <p>
+                        To date, the team has procured our official domain name, set up DNS, secured it with SSL, prepared a coming soon page, and is deployed with Docker. You may view it in the link below.
+                    </p>
+                    <p>
+                        LYO Public Web is being developed using ReactJS. Data for posts are queried through the LYO DataAPI.
+                    </p>
+                    <p>
+                        Targeted month of completion: <em>Mid-July 2021</em>
+                    </p>
+                    <h3>Links</h3>
+                    <a href="#"><div class="githubIcon"></div>GitHub Repository is Private to the LYO Development Team</a>
+                    <a target="_blank" href="https://lyorchestra.com"><div class="websiteIcon"></div>https://lyorchestra.com</a>
+                </section>
+
+                <section class="vertical project-container">
+                    <h2 align="center">Lasallian Youth Orchestra - DataAPI</h2>
+                    <p>
+                        The Lasallian Youth Orchestra DataAPI is responsible for handling the organization's data from MongoDB to the different LYO services
+                        that need it (Antonio, LYO Members' Portal, LYO Public Website). 
+                    </p>
+                    <p>
+                        This API-layer ensures that data is only passed on to entities or clients
+                        that are authorized to handle such data or execute operations. Apart from the authentication method we use (which will be confidential for security reasons),
+                        the API also has a permissions-system to ensure that data access and flow is controlled. Different types of user accounts can only access data that is prescribed for them to access.
+                    </p>
+                    <p>
+                        To date, the API layer runs on an undisclosed domain and port and secured with SSL. Deployed with Docker.
+                    </p>
+                    <h3>Links</h3>
+                    <a href="#"><div class="githubIcon"></div>GitHub Repository is Private to the LYO Development Team</a>
+                </section>
+            </article>
+            <article class="horizontal project-container" style="margin-left: 2.5em; margin-right: 2.5em;">
+                <h2 align="center">Lasallian Youth Orchestra - Members' Portal</h2>
+                <p>
+                    The Lasallian Youth Orchestra requires services and workflows that are tailored specifically for its nature. A lot of these workflows involve CAO A&A grading, artist profiling, among others.
+                    As of the time being, LYO relies heavily on the services that Google provides. We hope to create a streamlined process and workflow to help LYO officers and members stay in touch with their requirements,
+                    A&A grading, profiling, and paperwork. We aim to integrate multiple types of services to this project, namely:
+                </p>
+                <ul>
+                    <li>
+                        Sched-It Calendar & Appointment System (CCAPDEV S11-G44 Project)
+                        <ul><li>This will be used a lot during recruitment week to schedule appointments with potential members.</li></ul>
+                    </li>
+                    <li>User Account System to Track Member A&A Grades, Academic Standing, & Other Details Used for CAO Paperwork (Just like Animo.Sys)</li>
+                        <ul><li>The Culture & Arts Office requires paperwork about the organization and its members every term. Our goal is to automate this.</li></ul>
+                    <li>Canvas-like Service for Members' Music Requirements</li>
+                    <li>Other features we have yet to decide on</li>
+                </ul>
+                <p>This is the most ambitious of all LYO's development team projects. Development on this has not yet begun. The team plans to use ReactJS with the LYO DataAPI Layer.</p>
+                <p>
+                    Estimated month of completion: <em>November-December 2021</em>
+                </p>
+                <h3>Links</h3>
+                <a href="#"><div class="githubIcon"></div>GitHub Repository is Private to the LYO Development Team</a>
             </article>
         </div>
 

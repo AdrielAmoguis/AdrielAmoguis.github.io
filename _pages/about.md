@@ -14,12 +14,12 @@ profile:
     #     <p>Manila, National Capital Region, PH</p>
 
 news: true # includes a list of news items
-latest_posts: true # includes a list of the newest posts
+latest_posts: false # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Adriel Isaiah V. Amoguis is a Research Assistant in the <a href="https://altdsi.dlsu.edu.ph">Dr. Andrew L. Tan Data Science Institute (ALTDSI)</a> of De La Salle University, with a passion for artificial intelligence and machine learning. He is currently completing both a Bachelor's and a Master's degree in Computer Science at De La Salle University - Manila. Adriel's primary focus and most important skill is in machine learning engineering and artificial intelligence, and he has honed these skills through research and practice. He is a proficient developer in back-end web development, desktop application development, and database systems management.
+Adriel Isaiah V. Amoguis is a Research Assistant in the [Dr. Andrew L. Tan Data Science Institute (ALTDSI)](https://altdsi.dlsu.edu.ph) of De La Salle University, with a passion for artificial intelligence and machine learning. He is currently completing both a Bachelor's and a Master's degree in Computer Science at De La Salle University - Manila. Adriel's primary focus and most important skill is in machine learning engineering and artificial intelligence, and he has honed these skills through research and practice. He is a proficient developer in back-end web development, desktop application development, and database systems management.
 
 Adriel has already made a significant impact in his field, having published [two papers](/publications) on computer vision, and he is currently working on a project for his Bachelor's thesis in the domain of computer vision. He is eager to publish this work this year and is working hard to get acceptance, presentation, and publication in the [Conference on Computer Vision and Pattern Recognition (CVPR)](https://www.thecvf.com/) for future works.
 

@@ -60,27 +60,29 @@
 - title: Honors and Awards
   type: time_table
   contents:
-      - year: 1921
+      - year: 2023
         items:
-            - Nobel Prize in Physics
-            - Matteucci Medal
-      - year: 2029
-        items:
-            - Max Planck Medal
+            - Nomination for Best Paper in the Philippine Computing Science Congress 2023 (PCSC 2023)
+            - Gawad Sanghaya Award for Leadership and Service in the Arts
+      # - year: 2029
+      #   items:
+      #       - Max Planck Medal
 
 - title: Academic Interests
   type: nested_list
   contents:
-      - title: Topic 1.
+      - title: Machine Vision / Computer Vision
         items:
-            - Description 1.
-            - Description 2.
-      - title: Topic 2.
+            - Object Detection and Segmentation Algorithms
+            - CNNs and RNNs in Machine Vision
+            - Image Processing Techniques
+      - title: Machine Learning
         items:
-            - Description 1.
-            - Description 2.
+            - Time-Series Analysis
+            - Mathematical Modeling
 
 - title: Other Interests
   type: list
   contents:
-      - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+      - Aviation (Aspiring to have at least a Private Pilot License - PPL)
+      - Music (Classical & Jazz Piano)

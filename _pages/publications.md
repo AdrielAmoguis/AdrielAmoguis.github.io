@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: My publications and some unfinished works.
+description: My works and publications.
 years: [2023]
 nav: true
 nav_order: 1

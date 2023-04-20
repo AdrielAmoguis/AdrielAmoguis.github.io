@@ -1,12 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+    - AdrielAmoguis
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+    - AdrielAmoguis/TRACLUS
+    - AdrielAmoguis/CSINTSY-Expert-System
+    - AdrielAmoguis/Abstract-Machine-Interpreter
+    - AdrielAmoguis/Enhanced-Singular-Value-Decomposition-on-Python
+    - RizwanMunawar/yolov7-object-tracking

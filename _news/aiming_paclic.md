@@ -5,7 +5,7 @@ inline: true
 related_posts: false
 ---
 
-## Baybayin OCR Update
+## Baybayin OCR Extension
 
 Experiments are ongoing now for the extension study of our Baybayin OCR system. As a publication goal, we have identified [PACLIC 2023](https://paclic2023.github.io/) as our target conference. This conference will be in Hong Kong this December.
 

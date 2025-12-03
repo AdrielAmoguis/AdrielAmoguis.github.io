@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriel Amoguis - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur dark:bg-gray-900/95">
+            <div class="container mx-auto px-4 h-14 flex items-center">
+                <div class="mr-4 flex">
+                    <span class="font-bold gradient-text">Adriel Amoguis</span>
+                </div>
+                <nav class="flex items-center space-x-6 text-sm font-medium ml-8">
+                    <a href="/" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">About</a>
+                    <a href="/blog" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Blog</a>
+                    <a href="/publications" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Publications</a>
+                    <a href="/repositories" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Repositories</a>
+                    <a href="/cv" class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">CV</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+            
+            <div class="relative z-10 container mx-auto px-4 py-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            <span class="gradient-text">Adriel Isaiah V. Amoguis</span>
+                        </h1>
+                        
+                        <div class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 font-medium">
+                            <span class="inline-block">AI/ML Engineer</span>
+                            <span class="mx-2">•</span>
+                            <span class="inline-block">Research Assistant</span>
+                        </div>
+
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Research Assistant at Dr. Andrew L. Tan Data Science Institute (ALTDSI) 
+                            specializing in computer vision, machine learning, and artificial intelligence. 
+                            Graduate student in Computer Science at De La Salle University.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                            <a href="/publications" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700">
+                                View My Work
+                                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            
+                            <a href="/cv" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 border border-gray-300 bg-white hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                Download CV
+                                <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="flex items-center justify-center lg:justify-start gap-4">
+                            <a href="mailto:adriel.amoguis@dlsu.edu.ph" class="text-2xl hover:scale-110 transition-transform" title="Email">✉️</a>
+                            <a href="https://github.com/AdrielAmoguis" class="text-2xl hover:scale-110 transition-transform" title="GitHub">🐙</a>
+                            <a href="https://www.linkedin.com/in/adriel-amoguis" class="text-2xl hover:scale-110 transition-transform" title="LinkedIn">💼</a>
+                            <a href="https://www.researchgate.net/profile/Adriel-Isaiah-Amoguis" class="text-2xl hover:scale-110 transition-transform" title="ResearchGate">🔬</a>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-lg border-2 shadow-2xl overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                            <div class="text-white text-center p-8">
+                                <div class="text-6xl mb-4">👨‍💻</div>
+                                <div class="text-xl font-semibold">Adriel Amoguis</div>
+                                <div class="text-sm opacity-90">AI/ML Engineer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center border">
+                        <div class="text-3xl font-bold gradient-text mb-2">3+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Publications</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center border">
+                        <div class="text-3xl font-bold gradient-text mb-2">10+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center border">
+                        <div class="text-3xl font-bold gradient-text mb-2">2+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Years Research</div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center border">
+                        <div class="text-3xl font-bold gradient-text mb-2">∞</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Coffee Cups</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t bg-white dark:bg-gray-900">
+            <div class="container py-8">
+                <div class="text-center text-sm text-gray-600 dark:text-gray-400">
+                    <p>&copy; 2024 Adriel Isaiah V. Amoguis. Built with Next.js & deployed on GitHub Pages.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

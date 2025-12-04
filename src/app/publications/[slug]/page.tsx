@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, FileText, Quote } from 'lucide-react'
 import Link from 'next/link'
-import { getPublication } from '@/lib/content'
+import { getPublication, getPublications } from '@/lib/content'
 
 interface PublicationPageProps {
   params: {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PublicationPageProps): Promis
       description: publication.seo_description || publication.abstract?.substring(0, 160),
       type: 'article',
       publishedTime: publication.year ? new Date(publication.year, 0, 1).toISOString() : undefined,
-      authors: publication.authors.map(author => ({ name: author })),
+      authors: publication.authors,
       url: `https://adrielamoguis.com/publications/${publication.slug}`,
     },
     twitter: {
@@ -161,4 +161,11 @@ export default async function PublicationPage({ params }: PublicationPageProps) 
       </div>
     </article>
   )
+}
+
+export async function generateStaticParams() {
+  const publications = await getPublications()
+  return publications.map((publication) => ({
+    slug: publication.slug,
+  }))
 }

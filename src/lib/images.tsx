@@ -73,6 +73,7 @@ export function getImageDimensions(imagePath: string): { width: number; height: 
         height: metadata.height || 600
       };
     }
+    return null;
   } catch {
     return null;
   }

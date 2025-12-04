@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Star, GitFork, Eye } from 'lucide-react'
 import Link from 'next/link'
-import { getProject } from '@/lib/content'
+import { getProject, getProjects } from '@/lib/content'
 import { OptimizedImage } from '@/lib/images'
 
 interface ProjectPageProps {
@@ -178,4 +178,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
     </div>
   )
+}
+
+export async function generateStaticParams() {
+  const projects = await getProjects()
+  return projects.map((project) => ({
+    slug: project.slug,
+  }))
 }

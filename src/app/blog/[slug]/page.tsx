@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Calendar, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { getBlogPost } from '@/lib/content'
+import { getBlogPost, getBlogPosts } from '@/lib/content'
 import { OptimizedImage } from '@/lib/images'
 
 interface BlogPostPageProps {
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.seo_description || post.description,
       type: 'article',
       publishedTime: post.date,
-      authors: [{ name: post.author }],
+      authors: [post.author],
       images: post.featured_image ? [
         {
           url: post.featured_image,
@@ -49,18 +49,25 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+export async function generateStaticParams() {
+  const posts = await getBlogPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getBlogPost(params.slug);
-  
+
   if (!post) {
     return (
       <div className="container py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
           <p className="text-muted-foreground mb-8">
-            The blog post you're looking for doesn't exist or has been removed.
+            The requested blog post could not be found.
           </p>
-          <Button asChild>
+          <Button variant="outline" asChild>
             <Link href="/blog">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Blog
@@ -74,92 +81,73 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <article className="container py-20">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <Button asChild variant="outline" size="sm">
-            <Link href="/blog">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Blog
-            </Link>
-          </Button>
-        </div>
-
-        <header className="mb-8">
-          <div className="text-center mb-6">
-            {post.featured_image && (
-              <div className="mb-8">
-                <OptimizedImage 
-                  src={post.featured_image}
-                  alt={post.title}
-                  width={1200}
-                  height={400}
-                  priority={true}
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-            )}
-            
-            <h1 className="text-4xl font-bold gradient-text mb-4">{post.title}</h1>
-            
-            <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-8">
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </div>
-              
-              <div className="flex items-center gap-1">
-                <span>By {post.author}</span>
-              </div>
-              
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex gap-2">
-                  {post.tags.map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-3 py-1 bg-muted rounded-md text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+        <header className="mb-12">
+          <div className="mb-8">
+            <Button variant="ghost" asChild>
+              <Link href="/blog" className="mb-8">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Blog
+              </Link>
+            </Button>
           </div>
+          
+          <h1 className="text-4xl font-bold mb-4 gradient-text">
+            {post.title}
+          </h1>
+          
+          <div className="flex items-center gap-4 text-muted-foreground mb-8">
+            <div className="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              {new Date(post.date).toLocaleDateString()}
+            </div>
+            <span>•</span>
+            <span>{post.author}</span>
+          </div>
+
+          {post.featured_image && (
+            <div className="mb-8">
+              <OptimizedImage
+                src={post.featured_image}
+                alt={post.title}
+                width={1200}
+                height={630}
+                priority
+              />
+            </div>
+          )}
         </header>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-lg max-w-none">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
 
         <footer className="mt-12 pt-8 border-t">
-          <div className="text-center text-sm text-muted-foreground">
-            <p>Published on {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}</p>
-            
-            {post.tags && post.tags.length > 0 && (
-              <div className="mt-4">
-                <p className="font-semibold mb-2">Tags:</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {post.tags.map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-3 py-1 bg-muted rounded-md text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-semibold mb-2">Share this post</h3>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://adrielamoguis.com/blog/${post.slug}`)}`}>
+                    Twitter
+                  </Link>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://adrielamoguis.com/blog/${post.slug}`)}`}>
+                    LinkedIn
+                  </Link>
+                </Button>
               </div>
-            )}
+            </div>
+            
+            <Button variant="outline" asChild>
+              <Link href="/blog">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Blog
+              </Link>
+            </Button>
           </div>
         </footer>
       </div>
     </article>
-  )
+  );
 }

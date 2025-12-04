@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { gfm } from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
 
 export interface BlogPost {
   slug: string;
@@ -17,6 +17,8 @@ export interface BlogPost {
   canonical_url?: string;
   content: string;
   html: string;
+  excerpt?: string;
+  reading_time?: string;
 }
 
 export interface Publication {
@@ -28,12 +30,16 @@ export interface Publication {
   type: string;
   status: string;
   abstract: string;
+  description?: string;
+  date?: string;
   pdf_url?: string;
   doi?: string;
   arxiv_id?: string;
   bibtex?: string;
   citation_count?: number;
   featured: boolean;
+  seo_description?: string;
+  url?: string;
 }
 
 export interface Project {
@@ -41,14 +47,22 @@ export interface Project {
   title: string;
   description: string;
   tech_stack: string[];
+  technologies?: string[];
   github_url?: string;
   live_url?: string;
+  url?: string;
   project_image?: string;
   featured: boolean;
   order: number;
   status: string;
   start_date?: string;
   end_date?: string;
+  language?: string;
+  stars?: number;
+  forks?: number;
+  watchers?: number;
+  seo_description?: string;
+  name?: string;
 }
 
 export interface SiteConfig {
@@ -84,7 +98,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
         const { data, content } = matter(fileContents);
         
         const processedContent = remark()
-          .use(gfm)
+          .use(remarkGfm)
           .processSync(content);
         
         return {
@@ -179,7 +193,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     const { data, content } = matter(fileContents);
     
     const processedContent = remark()
-      .use(gfm)
+      .use(remarkGfm)
       .processSync(content);
     
     return {
